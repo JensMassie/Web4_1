@@ -19,8 +19,6 @@ public class Friends extends RequestHandler {
         String friendslist = toJson(person.getFriends());
         response.setContentType("text/json");
         response.getWriter().write(friendslist);
-
-
     }
 
 
@@ -29,6 +27,7 @@ public class Friends extends RequestHandler {
         for (Person person : friends) {
             JsonObject user = new JsonObject();
             user.addProperty("status", person.getStatus());
+            user.addProperty("name", person.getFirstName());
             json.add(person.getUserId(), user);
         }
         return json.toString();

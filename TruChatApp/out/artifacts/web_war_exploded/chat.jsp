@@ -29,7 +29,6 @@
     <p>${status}</p>
 </c:if>--%>
 
-
 <label for="status">Custom status</label>
 <input id="status" name="status" type="text">
 <input type="button" id="statusSubmit" value="button">

@@ -10,12 +10,14 @@ function processSubmit() {
     newStatusRequest.open("POST", "Controller?action=ChangeStatus", true);
     newStatusRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     newStatusRequest.send("stat="+status);
+    getNewStatus();
 }
 
 function getNewStatus() {
     statusUpdateRequest.open("GET", "Controller?action=GetStatus", true);
     statusUpdateRequest.onreadystatechange = showStatus;
     statusUpdateRequest.send();
+
 }
 
 function showStatus() {

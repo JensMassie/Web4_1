@@ -7,7 +7,6 @@ function processSubmit(){
     newStatusRequest.open("POST", "Controller?action=AddFriend", true);
     newStatusRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     newStatusRequest.send("username="+username);
-    refreshFriendlist();
 }
 
 function refreshFriendlist(){
@@ -25,10 +24,9 @@ function showFriends() {
             var parent = document.getElementById("friendlist");
             for (var person in serverResponse){
                 var li = document.createElement("LI");
-                li.innerText = person + " " + serverResponse[person].status;
+                li.innerText = serverResponse[person].name + " (" + person + ") " + serverResponse[person].status;
                 parent.appendChild(li)
             }
-
         }
     }
 
